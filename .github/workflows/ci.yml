@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m compileall -q .
+      - run: python -m unittest discover -s tests -v
+      - name: smoke run
+        run: |
+          python release.py build --version v1
+          python release.py deploy --target ./demo --artifact build/site-v1.tar
+          python release.py status --target ./demo

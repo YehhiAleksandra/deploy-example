@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>deploy-example</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #0d0d0f;
+      color: #f2f2f2;
+      font: 16px/1.5 ui-monospace, "Cascadia Mono", Menlo, monospace;
+    }
+    main { padding: 2rem; max-width: 32rem; }
+    h1 { font-size: 1.5rem; letter-spacing: .08em; text-transform: uppercase; }
+    p { color: #a8a8b3; }
+    code { color: #9ef0b6; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Release is live</h1>
+    <p>This page is the payload of the example artifact. If you can read it,
+      <code>release.py deploy</code> extracted, checked and switched the
+      <code>current</code> release.</p>
+    <p>Each deploy writes <code>RELEASE.json</code> next to this file, and
+      <code>release.py status</code> prints the active version and the one you
+      can roll back to.</p>
+  </main>
+</body>
+</html>
